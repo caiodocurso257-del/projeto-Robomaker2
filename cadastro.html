@@ -1,0 +1,270 @@
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <title>Cadastro - RoboMaker</title>
+    <style>
+      /* Configurações Gerais (Igual à Home) */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f7f6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Cabeçalho (Igual à Home) */
+      header {
+        background-color: #1a252f;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #e67e22;
+      }
+
+      header h1 {
+        margin-bottom: 10px;
+        font-size: 2rem;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #e67e22;
+      }
+
+      /* Conteúdo Principal / Container do Formulário */
+      main {
+        flex: 1;
+        max-width: 500px; /* Formulário mais estreito e centralizado */
+        width: 100%;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #34495e;
+      }
+
+      /* Estilização dos Campos de Entrada */
+      p {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #2c3e50;
+        font-size: 0.95rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="password"]:focus,
+      select:focus {
+        border-color: #e67e22;
+        outline: none;
+      }
+
+      /* Estilização dos Botões de Rádio (Perfil) */
+      .perfil-titulo {
+        font-weight: bold;
+        color: #1a252f;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #34495e;
+        padding-bottom: 5px;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+        margin-left: 2px;
+        cursor: pointer;
+      }
+
+      .radio-label {
+        font-weight: normal;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      /* Botão Cadastrar */
+      button[type="submit"] {
+        background-color: #e67e22;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+        margin-top: 15px;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #d35400;
+      }
+
+      button[type="submit"]:active {
+        transform: scale(0.98);
+      }
+
+      /* Rodapé (Igual à Home) */
+      footer {
+        background-color: #1a252f;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: auto;
+        font-size: 0.9rem;
+      }
+
+      footer p {
+        margin-bottom: 10px;
+      }
+
+      footer a {
+        color: #e67e22;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+<header>
+@@ -17,57 +182,67 @@ <h1>Crie sua Conta</h1>
+<main>
+<form>
+<p>
+          <label for="nome">Nome Completo:</label><br />
+          <label for="nome">Nome Completo:</label>
+<input 
+          type="text" 
+          id="nome" 
+          name="nome" required/>
+            type="text" 
+            id="nome" 
+            name="nome" required/>
+</p>
+
+<p>
+          <label for="email">E-mail:</label><br />
+          <label for="email">E-mail:</label>
+<input 
+          type="email" 
+          id="email" 
+          name="email" required/>
+            type="email" 
+            id="email" 
+            name="email" required/>
+</p>
+
+<p>
+          <label for="senha">Senha:</label><br />
+          <label for="senha">Senha:</label>
+<input 
+          type="password" 
+          id="senha" 
+          name="senha" required/>
+            type="password" 
+            id="senha" 
+            name="senha" required/>
+</p>
+
+        <p>Perfil de Aluno:</p>
+        <p class="perfil-titulo">Perfil de Aluno:</p>
+
+        <input 
+        type="radio" 
+        id="estudante" 
+        name="perfil" required/>
+        <label for="estudante">Estudante</label>
+        <p>
+          <input 
+            type="radio" 
+            id="estudante" 
+            name="perfil" required/>
+          <label for="estudante" class="radio-label">Estudante</label>
+
+        <input 
+        type="radio" 
+        id="professor" 
+        name="perfil" required/>
+        <label for="professor">Professor/Hobbista</label>
+          <input 
+            type="radio" 
+            id="professor" 
+            name="perfil" required/>
+          <label for="professor" class="radio-label">Professor/Hobbista</label>
+        </p>
+
+<p>
+<label for="trilha">Trilha de Interesse:</label>
+          <select id="trilha" name="trilha">
+            <option>Robótica Básica</option>
+            <option>Inteligência Artificial</option>
+            <option>Programação</option>
+          </select>
+</p>
+
+        <select id="trilha" name="trilha">
+          <option>Robótica Básica</option>
+          <option>Inteligência Artificial</option>
+          <option>Programação</option>
+        </select>
+
+<p>
+<button type="submit">Cadastrar</button>
+</p>
+</form>
+</main>
+
+    <footer>
+      <p>© 2026 RoboMaker Kits Educacionais - Desenvolvido por Caio Fernando</p>
+
+      <p>Redes Sociais:</p>
+
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> |
+      <a href="#">YouTube</a>
+    </footer>
+</body>
+</html>
